@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: brown;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color:lightyellow;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0;
+    }
+
+    select, input[type="text"] {
+        width: 90%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid black;
+        border-radius: 3px;
+    }
+
+    select {
+        height: 40px;
+    }
+
+    .rating {
+        margin: 5px 0;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+
+    .buttons button {
+        background-color: brown;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .buttons button.refresh {
+        background-color:lightcoral;
+    }
+
+    .rating input[type="radio"] {
+        display: none;
+    }
+
+    .rating label {
+        display: inline-block;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    .rating label:before {
+        content: "★";
+    }
+
+    .rating input[type="radio"]:checked + label:before {
+        color: gold;
+    }
+    </style>
+    <body>
+    <div class="container">
+        <h2>Product Experience</h2>
+        <form action="submit_feedback.php" method="post"></form>
+            <label for="name">Customer_ID :</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+
+            <label for="address">Location :</label>
+            <input type="text" id="address" name="address" required>
+            <br>
+
+            <label for="customer-id">Product_Name :</label>
+            <input type="text" id="customer-id" name="customer-id" required>
+            <br>
+            <label for="category">Category of Product:</label>
+            <select id="category" name="category">
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+                <option value="furniture">Furniture</option>
+                <option value="Toys">Toys</option>
+            </select>
+            <br>
+            <label for="quality">Quality of Product:</label>
+            <div class="rating">
+                <input type="radio" id="excellent" name="quality" value="Excellent">
+                <label for="excellent">Excellent</label>
+                <input type="radio" id="very-good" name="quality" value="Very Good">
+                <label for="very-good">Very Good</label>
+                <input type="radio" id="good" name="quality" value="Good">
+                <label for="good">Good</label>
+                <input type="radio" id="bad" name="quality" value="Bad">
+                <label for="bad">Bad</label>
+                <input type="radio" id="very-bad" name="quality" value="Very Bad">
+                <label for="very-bad">Very Bad</label>
+            </div>
+            <br>
+            <label for="experience">Overall Experience:</label>
+            <div class="rating">
+                <input type="radio" id="excellent-exp" name="experience" value="Excellent">
+                <label for="excellent-exp">Excellent</label>
+                <input type="radio" id="very-good-exp" name="experience" value="Very Good">
+                <label for="very-good-exp">Very Good</label>
+                <input type="radio" id="good-exp" name="experience" value="Good">
+                <label for="good-exp">Good</label>
+                <input type="radio" id="bad-exp" name="experience" value="Bad">
+                <label for="bad-exp">Bad</label>
+                <input type="radio" id="very-bad-exp" name="experience" value="Very Bad">
+                <label for="very-bad-exp">Very Bad</label>
+            </div>
+            <br>
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+            <br>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset" class="refresh">Refresh</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
